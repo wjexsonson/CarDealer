@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20sp"
+    android:background="@drawable/rounded_background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/characteristics"
+        style="@style/MediumTextViewStyle"
+        android:text="@string/characteristics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/year_title"
+        style="@style/CharacteristicsTextViewStyle"
+        android:text="@string/year_of_issue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/characteristics" />
+
+    <TextView
+        android:id="@+id/year"
+        style="@style/CharacteristicsTextViewStyle"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/characteristics"
+        tools:text="2023" />
+
+    <TextView
+        android:id="@+id/mileage_title"
+        style="@style/CharacteristicsTextViewStyle"
+        android:text="@string/mileage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/year_title" />
+
+    <TextView
+        android:id="@+id/mileage"
+        style="@style/CharacteristicsTextViewStyle"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/year_title"
+        tools:text="143 км." />
+
+    <TextView
+        android:id="@+id/body_title"
+        style="@style/CharacteristicsTextViewStyle"
+        android:text="@string/body"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mileage_title" />
+
+    <TextView
+        android:id="@+id/body"
+        style="@style/CharacteristicsTextViewStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mileage_title"
+        tools:text="Универсал 5 дв." />
+
+    <TextView
+        android:id="@+id/color_title"
+        style="@style/CharacteristicsTextViewStyle"
+        android:text="@string/color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/body_title" />
+
+    <TextView
+        android:id="@+id/color"
+        style="@style/CharacteristicsTextViewStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/body_title"
+        tools:text="Серый" />
+
+    <TextView
+        android:id="@+id/vin_title"
+        style="@style/CharacteristicsTextViewStyle"
+        android:text="@string/vin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/color_title" />
+
+    <TextView
+        android:id="@+id/vin"
+        style="@style/CharacteristicsTextViewStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/color_title"
+        tools:text="ZPBUA1ZL9KLA00848" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

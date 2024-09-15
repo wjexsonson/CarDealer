@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/fragment_home_toolbar"
+        layout="@layout/fragment_home_toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/app_name"
+            style="@style/LogoTextViewStyle"
+            android:fontFamily="@font/roboto_mono_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--        android:id="@+id/search_container"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="50dp"-->
+        <!--        android:layout_marginTop="30sp"-->
+        <!--        android:background="@drawable/rounded_background"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@id/app_name">-->
+
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/car_icon"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="10dp"-->
+        <!--            android:background="@drawable/directions_car"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            tools:ignore="ContentDescription" />-->
+
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/filter_icon"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginEnd="20sp"-->
+        <!--            android:background="@drawable/filter_list"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            tools:ignore="ContentDescription" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/brand"-->
+        <!--            style="@style/MediumTextViewStyle"-->
+        <!--            android:layout_marginStart="10dp"-->
+        <!--            android:text="@string/brand"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/car_icon"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <View-->
+        <!--            android:id="@+id/horizontalLineLeft"-->
+        <!--            android:layout_width="2dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_marginVertical="10sp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:background="@color/grey"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/filter_icon"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <TextView
+            android:id="@+id/relevent_offers_tv"
+            style="@style/BigTextViewStyle"
+            android:layout_marginTop="10dp"
+            android:text="@string/relevant_offers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_name" />
+
+        <!--    <ImageButton-->
+        <!--        android:id="@+id/sort_icon"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginTop="10dp"-->
+        <!--        android:background="@drawable/swap_vert"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@id/relevent_offers_tv"-->
+        <!--        tools:ignore="ContentDescription" />-->
+
+        <Spinner
+            android:id="@+id/sort_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relevent_offers_tv" />
+
+        <TextView
+            android:id="@+id/sort_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto_mono_bold"
+            android:text="@string/sort_by"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/sort_spinner"
+            app:layout_constraintEnd_toStartOf="@id/sort_spinner"
+            app:layout_constraintTop_toTopOf="@id/sort_spinner" />
+
+        <TextView
+            android:id="@+id/car_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto_mono_bold"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/sort_spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sort_spinner"
+            tools:text="1337 объявлений" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sort_spinner"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <include
+            android:id="@+id/no_data_place_holder"
+            layout="@layout/no_data"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/no_connection_place_holder"
+            layout="@layout/no_connection"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/progress_bar_place_holder"
+            layout="@layout/progress_bar"
+            android:visibility="gone" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

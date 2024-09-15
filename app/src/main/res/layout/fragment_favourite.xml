@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/favourite"
+        style="@style/TitleTextViewStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/favourite" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favouriteList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <include
+        android:id="@+id/progress_bar_place_holder"
+        layout="@layout/progress_bar"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/empty_favourite_place_holder"
+        layout="@layout/empty_favourite"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/not_authorized_user_place_holder"
+        layout="@layout/not_authorized_user"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/no_connection_place_holder"
+        layout="@layout/no_connection"
+        android:visibility="gone" />
+
+</LinearLayout>

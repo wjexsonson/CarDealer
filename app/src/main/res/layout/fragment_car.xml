@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/fragment_car_toolbar"
+            layout="@layout/fragment_car_toolbar"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <include
+            android:id="@+id/car_title_container"
+            layout="@layout/fragment_car_title" />
+
+        <include
+            android:id="@+id/car_characteristics_container"
+            layout="@layout/fragment_car_characteristics" />
+
+    </LinearLayout>
+</ScrollView>

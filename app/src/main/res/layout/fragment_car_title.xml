@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/car_info"
+        style="@style/BigTextViewStyle"
+        android:layout_marginTop="20dp"
+        android:maxLines="1"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Audi RS 6, 2023" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/BigTextViewStyle"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/car_info"
+        tools:text="22 000 000 ₽" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/car_photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/price" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
